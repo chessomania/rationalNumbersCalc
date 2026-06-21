@@ -58,4 +58,35 @@ public class RationalNumber {
 
         return new RationalNumber(num, den);
     }
+
+    public RationalNumber multiply (RationalNumber other) {
+        int num = this.numerator * other.numerator;
+
+        int den = this.denominator * other.denominator;
+
+        return new RationalNumber(num, den);
+    }
+
+    public RationalNumber divide (RationalNumber other) {
+        int num = this.numerator * other.denominator;
+
+        int den = this.denominator * other.numerator;
+
+        return new RationalNumber(num, den);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (this == obj) return true;
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        RationalNumber other = (RationalNumber) obj;
+
+        return this.numerator == other.numerator
+                && this.denominator == other.denominator;
+    }
 }
