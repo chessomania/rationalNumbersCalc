@@ -41,4 +41,21 @@ public class RationalNumber {
             }
         }
     }
+    public RationalNumber add (RationalNumber other) {
+        int num = this.numerator * other.denominator
+                + other.numerator * this.denominator;
+
+        int den = this.denominator * other.denominator;
+
+        return new RationalNumber(num, den);
+    }
+
+    public RationalNumber subtract (RationalNumber other) {
+        int num = this.numerator * other.denominator
+                - other.numerator * this.denominator;
+
+        int den = this.denominator * other.denominator;
+
+        return new RationalNumber(num, den);
+    }
 }
