@@ -89,4 +89,13 @@ public class RationalNumber {
         return this.numerator == other.numerator
                 && this.denominator == other.denominator;
     }
+
+    public int compareTo(RationalNumber other) {
+        if (this.numerator * other.denominator > this.denominator * other.numerator)
+            return 1;
+        else if (this.numerator * other.denominator == this.denominator * other.numerator)
+            return 0;
+        else
+            return -1;
+    }
 }
